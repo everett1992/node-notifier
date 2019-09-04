@@ -3,7 +3,7 @@
  */
 var os = require('os');
 var which = require('which');
-var utils = require('../lib/utils');
+var utils = require('node-notifier-utils');
 
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');

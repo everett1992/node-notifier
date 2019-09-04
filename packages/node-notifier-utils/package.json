@@ -1,0 +1,27 @@
+{
+  "name": "node-notifier-utils",
+  "version": "6.0.0",
+  "description": "node-notifier utils",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mikaelbr/node-notifier.git"
+  },
+  "author": "Mikael Brevik",
+  "license": "MIT",
+  "dependencies": {
+    "shellwords": "^0.1.1",
+    "semver": "^5.5.0",
+    "is-wsl": "^1.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mikaelbr/node-notifier/issues"
+  },
+  "homepage": "https://github.com/mikaelbr/node-notifier#readme",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js"
+  ]
+}

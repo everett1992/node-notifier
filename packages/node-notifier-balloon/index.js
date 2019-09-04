@@ -22,11 +22,10 @@ Usage
 
  */
 var path = require('path');
-var notifier = path.resolve(__dirname, '../vendor/notifu/notifu');
-var checkGrowl = require('../lib/checkGrowl');
-var utils = require('../lib/utils');
-var Toaster = require('./toaster');
-var Growl = require('./growl');
+var notifier = path.resolve(__dirname, './vendor/notifu/notifu');
+var utils = require('node-notifier-utils');
+var Toaster = require('node-notifier-toaster');
+var Growl = require('node-notifier-growl');
 var os = require('os');
 
 var EventEmitter = require('events').EventEmitter;
@@ -92,7 +91,7 @@ WindowsBalloon.prototype.notify = function(options, callback) {
     return this;
   }
 
-  checkGrowl(notifierOptions, function(_, hasGrowlResult) {
+  utils.checkGrowl(notifierOptions, function(_, hasGrowlResult) {
     hasGrowl = hasGrowlResult;
 
     if (hasGrowl) {

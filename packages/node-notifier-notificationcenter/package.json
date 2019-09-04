@@ -1,0 +1,30 @@
+{
+  "name": "node-notifier-notificationcenter",
+  "version": "6.0.0",
+  "description": "node-notifier notifiactioncenter implementation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mikaelbr/node-notifier.git"
+  },
+  "author": "Mikael Brevik",
+  "license": "MIT",
+  "dependencies": {
+    "node-notifier-utils": "^6.0.0",
+    "node-notifier-growl": "^6.0.0"
+  },
+  "devDependencies": {
+    "node-notifier-test-utils": "^6.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mikaelbr/node-notifier/issues"
+  },
+  "homepage": "https://github.com/mikaelbr/node-notifier#readme",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js",
+    "vendor/"
+  ]
+}

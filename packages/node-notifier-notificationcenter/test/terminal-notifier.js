@@ -1,10 +1,10 @@
-var NotificationCenter = require('../notifiers/notificationcenter');
-var Growl = require('../notifiers/growl');
-var utils = require('../lib/utils');
+var NotificationCenter = require('../');
+var Growl = require('node-notifier-growl');
+var utils = require('node-notifier-utils');
 var path = require('path');
 var os = require('os');
 var fs = require('fs');
-var testUtils = require('./_test-utils');
+var testUtils = require('node-notifier-test-utils');
 
 var notifier = null;
 var originalUtils = utils.fileCommandJson;

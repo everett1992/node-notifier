@@ -1,12 +1,15 @@
 var os = require('os');
-var utils = require('./lib/utils');
+var utils = require('node-notifier-utils');
+var Growl = require('node-notifier-growl');
 
 // All notifiers
-var NotifySend = require('./notifiers/notifysend');
-var NotificationCenter = require('./notifiers/notificationcenter');
-var WindowsToaster = require('./notifiers/toaster');
-var Growl = require('./notifiers/growl');
-var WindowsBalloon = require('./notifiers/balloon');
+var NotifySend = requireWithFallback('node-notifier-notifysend', Growl);
+var NotificationCenter = requireWithFallback(
+  'node-notifier-notificationcenter',
+  Growl
+);
+var WindowsToaster = requireWithFallback('node-notifier-toaster', Growl);
+var WindowsBalloon = requireWithFallback('node-notifier-balloon', Growl);
 
 var options = { withFallback: true };
 
@@ -42,6 +45,14 @@ switch (osType) {
       module.exports = new Growl(options);
       module.exports.Notification = Growl;
     }
+}
+
+function requireWithFallback(module, fallback) {
+  try {
+    return require(module);
+  } catch (err) {
+    return fallback;
+  }
 }
 
 // Expose notifiers to give full control.

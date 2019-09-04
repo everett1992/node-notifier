@@ -1,8 +1,8 @@
-var Notify = require('../notifiers/toaster');
-var utils = require('../lib/utils');
+var Notify = require('../');
+var utils = require('node-notifier-utils');
 var path = require('path');
 var os = require('os');
-var testUtils = require('./_test-utils');
+var testUtils = require('node-notifier-test-utils');
 
 describe('WindowsToaster', function() {
   var original = utils.fileCommand;

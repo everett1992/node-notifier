@@ -1,4 +1,4 @@
-var Notify = require('../notifiers/growl');
+var Notify = require('../');
 var growly = require('growly');
 
 describe('growl', function() {

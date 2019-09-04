@@ -6,6 +6,7 @@ var path = require('path');
 var url = require('url');
 var os = require('os');
 var fs = require('fs');
+var net = require('net');
 
 function clone(obj) {
   return JSON.parse(JSON.stringify(obj));
@@ -513,3 +514,26 @@ function sanitizeNotifuTypeArgument(type) {
 
   return 'info';
 }
+
+var hasGrowl = false;
+module.exports.checkGrowl = function(growlConfig, cb) {
+  if (typeof cb === 'undefined') {
+    cb = growlConfig;
+    growlConfig = {};
+  }
+  if (hasGrowl) return cb(null, hasGrowl);
+  var port = growlConfig.port || 23053;
+  var host = growlConfig.host || 'localhost';
+  var socket = net.connect(port, host);
+  socket.setTimeout(100);
+
+  socket.on('connect', function() {
+    socket.end();
+    cb(null, true);
+  });
+
+  socket.on('error', function() {
+    socket.end();
+    cb(null, false);
+  });
+};

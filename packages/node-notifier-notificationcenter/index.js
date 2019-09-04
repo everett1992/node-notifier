@@ -1,8 +1,8 @@
 /**
  * A Node.js wrapper for terminal-notify (with fallback).
  */
-var utils = require('../lib/utils');
-var Growl = require('./growl');
+var utils = require('node-notifier-utils');
+var Growl = require('node-notifier-growl');
 var path = require('path');
 var notifier = path.join(
   __dirname,

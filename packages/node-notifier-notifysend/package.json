@@ -1,0 +1,26 @@
+{
+  "name": "node-notifier-notifysend",
+  "version": "6.0.0",
+  "description": "node-notifier notify-send implementation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mikaelbr/node-notifier.git"
+  },
+  "author": "Mikael Brevik",
+  "license": "MIT",
+  "dependencies": {
+    "which": "^1.3.0",
+    "node-notifier-utils": "^6.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mikaelbr/node-notifier/issues"
+  },
+  "homepage": "https://github.com/mikaelbr/node-notifier#readme",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js"
+  ]
+}

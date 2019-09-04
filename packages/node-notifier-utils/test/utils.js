@@ -1,6 +1,6 @@
 var path = require('path');
 var fs = require('fs');
-var _ = require('../lib/utils');
+var _ = require('../');
 
 describe('utils', function() {
   describe('clone', function() {

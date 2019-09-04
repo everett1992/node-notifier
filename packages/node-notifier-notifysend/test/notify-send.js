@@ -1,5 +1,5 @@
-var Notify = require('../notifiers/notifysend');
-var utils = require('../lib/utils');
+var Notify = require('../');
+var utils = require('node-notifier-utils');
 var os = require('os');
 
 describe('notify-send', function() {

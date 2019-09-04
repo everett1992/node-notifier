@@ -1,8 +1,7 @@
 /**
  * Wrapper for the growly module
  */
-var checkGrowl = require('../lib/checkGrowl');
-var utils = require('../lib/utils');
+var utils = require('node-notifier-utils');
 var growly = require('growly');
 
 var EventEmitter = require('events').EventEmitter;
@@ -64,7 +63,7 @@ Growl.prototype.notify = function(options, callback) {
     return this;
   }
 
-  checkGrowl(growly, function(_, didHaveGrowl) {
+  utils.checkGrowl(growly, function(_, didHaveGrowl) {
     hasGrowl = didHaveGrowl;
     if (!didHaveGrowl) return callback(new Error(errorMessageNotFound));
     growly.notify(options.message, options);
